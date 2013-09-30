@@ -52,17 +52,7 @@ function startTest() {
     }
     //Plots a partial summary
     window.setTimeout(lifeProcess, timeBetweenSteps);
-    timeEllapsed = new Date() - timeStartTest;
-    divTime = window.document.getElementById("timeEllapsed");
-    divCellsBorn = window.document.getElementById("cellsBorn");
-    divCellsDead = window.document.getElementById("cellsDead");
-    divCurrentAliveCells = window.document.getElementById("currentAliveCells");
-    divCurrentDeadCells = window.document.getElementById("currentDeadCells");
-    divTime.innerHTML = timeEllapsed;
-    divCellsBorn.innerHTML = bornCells;
-    divCellsDead.innerHTML = deadCells;
-    divCurrentAliveCells.innerHTML = currentAliveCells;
-    divCurrentDeadCells.innerHTML = currentDeadCells;
+    makeReport();
 }
 
 function lifeProcess() {
@@ -105,17 +95,7 @@ function lifeProcess() {
     cells = auxMatrix;
     repaintScreen();
     //Plots the sumary of data
-    timeEllapsed = new Date() - timeStartTest;
-    divTime = window.document.getElementById("timeEllapsed");
-    divCellsBorn = window.document.getElementById("cellsBorn");
-    divCellsDead = window.document.getElementById("cellsDead");
-    divCurrentAliveCells = window.document.getElementById("currentAliveCells");
-    divCurrentDeadCells = window.document.getElementById("currentDeadCells");
-    divTime.innerHTML = timeEllapsed;
-    divCellsBorn.innerHTML = bornCells;
-    divCellsDead.innerHTML = deadCells;
-    divCurrentAliveCells.innerHTML = currentAliveCells;
-    divCurrentDeadCells.innerHTML = currentDeadCells;
+    makeReport();
 }
 
 function repaintScreen() {
@@ -130,4 +110,18 @@ function repaintScreen() {
         }
     }
     window.setTimeout(lifeProcess, timeBetweenSteps);
+}
+
+function makeReport(){
+    timeEllapsed = new Date() - timeStartTest;
+    divTime = window.document.getElementById("timeEllapsed");
+    divCellsBorn = window.document.getElementById("cellsBorn");
+    divCellsDead = window.document.getElementById("cellsDead");
+    divCurrentAliveCells = window.document.getElementById("currentAliveCells");
+    divCurrentDeadCells = window.document.getElementById("currentDeadCells");
+    divTime.innerHTML = timeEllapsed;
+    divCellsBorn.innerHTML = bornCells;
+    divCellsDead.innerHTML = deadCells;
+    divCurrentAliveCells.innerHTML = currentAliveCells;
+    divCurrentDeadCells.innerHTML = currentDeadCells;
 }
